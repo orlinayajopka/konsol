@@ -1,0 +1,126 @@
+package main
+
+import (
+	"bufio"
+	"fmt"
+	"os"
+)
+
+func main() {
+	var name string
+	var ln string
+	var text string
+
+	scanner := bufio.NewScanner(os.Stdin)
+	fmt.Printf("Анкета №")
+	scanner.Scan()
+	input := scanner.Text()
+
+	fmt.Print("Введите свою фамилию:")
+	fmt.Fscan(os.Stdin, &ln)
+	fmt.Print("Введите своё имя:")
+	fmt.Fscan(os.Stdin, &name)
+	fmt.Print("Введите заметку:")
+	fmt.Fscan(os.Stdin, &text)
+
+	fmt.Println("_____________________________________________")
+
+	fmt.Println("Анкета №", input)
+	fmt.Println("Фамилия:\n", ln)
+	fmt.Println("Имя:\n", name)
+	fmt.Println("Заметка:\n", text)
+
+	fmt.Println("_____________________________________________")
+
+	var a string
+	fmt.Println("Вы закончили запись?")
+	fmt.Scan(&a)
+
+	for a == "нет" {
+		fmt.Println("Что вы хотите поменять?")
+		fmt.Scan(&a)
+	}
+	for a == "номер" {
+		scanner := bufio.NewScanner(os.Stdin)
+		fmt.Printf("Анкета №")
+		scanner.Scan()
+		input := scanner.Text()
+		fmt.Println("_____________________________________________")
+
+		fmt.Println("Анкета №", input)
+		fmt.Println("Фамилия:\n", ln)
+		fmt.Println("Имя:\n", name)
+		fmt.Println("Заметка:\n", text)
+		fmt.Println("_____________________________________________")
+		fmt.Println("Запись закончена")
+		return
+	}
+
+	for a == "фамилия" {
+		fmt.Print("Введите свою фамилию:")
+		fmt.Scan(&ln)
+		fmt.Println("_____________________________________________")
+
+		fmt.Println("Анкета №", input)
+		fmt.Println("Фамилия:\n", ln)
+		fmt.Println("Имя:\n", name)
+		fmt.Println("Заметка:\n", text)
+		fmt.Println("_____________________________________________")
+		fmt.Println("Запись закончена")
+		return
+	}
+	for a == "имя" {
+		fmt.Print("Введите своё имя:")
+		fmt.Scan(&name)
+		fmt.Println("_____________________________________________")
+
+		fmt.Println("Анкета №", input)
+		fmt.Println("Фамилия:\n", ln)
+		fmt.Println("Имя:\n", name)
+		fmt.Println("Заметка:\n", text)
+		fmt.Println("_____________________________________________")
+		fmt.Println("Запись закончена")
+		return
+	}
+	for a == "заметка" {
+		fmt.Print("Введите заметку:")
+		fmt.Scan(&text)
+		fmt.Println("_____________________________________________")
+
+		fmt.Println("Анкета №", input)
+		fmt.Println("Фамилия:\n", ln)
+		fmt.Println("Имя:\n", name)
+		fmt.Println("Заметка:\n", text)
+		fmt.Println("_____________________________________________")
+		fmt.Println("Запись закончена")
+		return
+	}
+	for a == "все" {
+		scanner := bufio.NewScanner(os.Stdin)
+		fmt.Printf("Анкета №")
+		scanner.Scan()
+		input := scanner.Text()
+
+		fmt.Print("Введите свою фамилию:")
+		fmt.Scan(&name)
+		fmt.Print("Введите своё имя:")
+		fmt.Scan(&ln)
+		fmt.Print("Введите заметку:")
+		fmt.Scan(&text)
+
+		fmt.Println("_____________________________________________")
+
+		fmt.Println("Анкета №", input)
+		fmt.Println("Фамилия:\n", ln)
+		fmt.Println("Имя:\n", name)
+		fmt.Println("Заметка:\n", text)
+		fmt.Println("_____________________________________________")
+		fmt.Println("Запись закончена")
+		return
+	}
+	for a == "да" {
+		fmt.Println("Запись закончена")
+		fmt.Println("_____________________________________________")
+		return
+	}
+}
